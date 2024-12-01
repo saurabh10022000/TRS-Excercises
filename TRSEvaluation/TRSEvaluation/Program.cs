@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;  // For basic types like DateTime, Console, etc.
+using System.Collections.Generic;  // For List<T>, KeyValuePair<TKey, TValue>, etc.
+using System.Linq;  // For LINQ methods like Min(), Average(), GroupBy(), etc.
 
 namespace TRSEvaluation
 {
@@ -8,85 +8,97 @@ namespace TRSEvaluation
     {
         static void Main(string[] args)
         {
-            try
-            {
-                // Example usage
-                Console.WriteLine(GetMinimumValue(new int[] { -6, 45, 32, 64, -145, 0, 18, 64 }));
-                Console.WriteLine(GetMinimumValue(new int[] { 74, -9, 97, 41, -41, 24, 48, 9, -48, -60, -19}));
-                Console.WriteLine(GetMinimumValue(new int[] { -1, -17, 30, 52, -34,-64 }));
+            // Test each method below by uncommenting the corresponding lines.
 
-                Console.WriteLine(Multiply(3));
-                Console.WriteLine(Multiply(-1));
-                Console.WriteLine(Multiply(2));
-                Console.WriteLine(Multiply(0));
-                Console.WriteLine(Multiply(61));
+            // GetMinValue method
+            Console.WriteLine(GetMinimumValue(new int[] { -6, 45, 32, 64, -145, 0, 18, 64 }));
+            Console.WriteLine(GetMinimumValue(new int[] { 74, -9, 97, 41, -41, 24, 48, 9, -48, -60, -19 }));
 
-                Console.WriteLine(AverageAndRound(new int[] { 14, -2, 5, 8, 32, 98, 68 }));
-                Console.WriteLine(AverageAndRound(new int[] { 28, -52, 4, 12, 31, 1, -2 }));
-                Console.WriteLine(AverageAndRound(new int[] { 15, 18, -42, 6, 12, -1 }));
-                Console.WriteLine(AverageAndRound(new int[] { 4, 12, 28, -52, 16, -3 }));
+            // Multiply Method
+            Console.WriteLine(Multiply(3));    // Odd number, should multiply by 9
+            Console.WriteLine(Multiply(-1));   // Odd number, should multiply by 9
+            Console.WriteLine(Multiply(2));    // Even number, should multiply by 8
+            Console.WriteLine(Multiply(61));   // Odd number, should multiply by 9
 
-                CountGroupings(new string[] { "Chocolate ", "Vanilla", "Cherry", "Vanilla", "Cherry"}).ForEach(x => Console.WriteLine($"Value: {x.Key} occurred {x.Value} times"));
-                CountGroupings(new string[] { "Cherry ", "Vanilla", "Cherry", "Vanilla", "Cherry" }).ForEach(x => Console.WriteLine($"Value: {x.Key} occurred {x.Value} times"));
-                CountGroupings(new string[] { "Chocolate ", "Chocolate", "Orange", "Vanilla", "Orange" }).ForEach(x => Console.WriteLine($"Value: {x.Key} occurred {x.Value} times"));
-                CountGroupings(new string[] { "Chocolate ", "Vanilla", "Chocolate", "Vanilla", "Vanilla" }).ForEach(x => Console.WriteLine($"Value: {x.Key} occurred {x.Value} times"));
+            // Average and Round method
+            Console.WriteLine(AverageAndRound(new int[] { 14, -2, 5, 8, 32, 98, 68 }));
+            Console.WriteLine(AverageAndRound(new int[] { 15, 18, -42, 6, 12, -1 }));
 
-                Console.WriteLine(GetIndexOf(new string[] { "Cat", "Dog", "Bird" }, "Dog"));
-                Console.WriteLine(GetIndexOf(new string[] { "Fish", "Hamster", "Snake" }, "Fish"));
-                Console.WriteLine(GetIndexOf(new string[] { "Mouse", "Dog", "Bird" }, "Cat"));
-                Console.WriteLine(GetIndexOf(new string[] { "Cat", "Hamster", "Cat" }, "Cat"));
+            // Count groups method
+            CountGroupings(new string[] { "Chocolate", "Vanilla", "Cherry", "Vanilla", "Cherry" })
+                .ForEach(x => Console.WriteLine($"Value: {x.Key} occurred {x.Value} times"));
 
+            // Index Of method
+            Console.WriteLine(GetIndexOf(new string[] { "Cat", "Dog", "Bird" }, "Dog"));
+            Console.WriteLine(GetIndexOf(new string[] { "Mouse", "Dog", "Bird" }, "Cat"));
 
-                Console.WriteLine(GetFiscalYear(new DateTime(2024, 7, 1)));
-                Console.WriteLine(GetFiscalYear(new DateTime(2023, 5, 21)));
-                Console.WriteLine(GetFiscalYear(new DateTime(2025, 6, 20)));
-                Console.WriteLine(GetFiscalYear(new DateTime(2024, 11, 1)));
-                Console.WriteLine(GetFiscalYear(new DateTime(2022, 12, 31)));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred: {ex.Message}");
-            }
+            // Get fiscal year methods
+            Console.WriteLine(GetFiscalYear(new DateTime(2024, 7, 1)));
+            Console.WriteLine(GetFiscalYear(new DateTime(2023, 5, 21)));
         }
 
+        // Method to return the minimum value from an array of integers
         static int GetMinimumValue(int[] values)
         {
             if (values == null || values.Length == 0)
-                throw new ArgumentException("Array cannot be null or empty.");
+            {
+                throw new ArgumentException("The array cannot be null or empty.");
+            }
             return values.Min();
         }
 
+        // Method to multiply based on whether the number is even or odd
         static int Multiply(int value)
         {
             return value % 2 == 0 ? value * 8 : value * 9;
         }
 
+        // Method to calculate the average and return it rounded down
         static int AverageAndRound(int[] values)
         {
             if (values == null || values.Length == 0)
-                throw new ArgumentException("Array cannot be null or empty.");
+            {
+                throw new ArgumentException("The array cannot be null or empty.");
+            }
             return (int)Math.Floor(values.Average());
         }
 
+        // Method to count occurrences of each string in an array
         static List<KeyValuePair<string, int>> CountGroupings(string[] values)
         {
-            if (values == null || values.Length == 0)
-                throw new ArgumentException("Array cannot be null or empty.");
-            return values.GroupBy(v => v.Trim())
-                         .Select(group => new KeyValuePair<string, int>(group.Key, group.Count()))
+            if (values == null)
+            {
+                throw new ArgumentException("The array cannot be null.");
+            }
+
+            return values.GroupBy(x => x.Trim())
+                         .ToDictionary(group => group.Key, group => group.Count())
                          .ToList();
         }
 
+        // Method to return the index of a value in an array, or -1 if not found
         static int GetIndexOf(string[] values, string lookupValue)
         {
             if (values == null || lookupValue == null)
-                throw new ArgumentException("Array and lookup value cannot be null.");
+            {
+                throw new ArgumentException("The array or lookup value cannot be null.");
+            }
+
             return Array.IndexOf(values, lookupValue);
         }
 
+        // Method to return the fiscal year based on the date
         static int GetFiscalYear(DateTime value)
         {
             return value.Month >= 7 ? value.Year + 1 : value.Year;
+        }
+    }
+
+    // Custom exception class for unimplemented methods
+    internal class CustomNotImplementedException : Exception
+    {
+        public CustomNotImplementedException() : base("This method has not been implemented yet.")
+        {
         }
     }
 }

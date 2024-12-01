@@ -1,0 +1,16 @@
+/Users/saurabhjain/Desktop/TRS-Excercises-2/TRSEvaluation/TRSEvaluation/bin/Debug/net8.0/TRSEvaluation
+/Users/saurabhjain/Desktop/TRS-Excercises-2/TRSEvaluation/TRSEvaluation/bin/Debug/net8.0/TRSEvaluation.dll.config
+/Users/saurabhjain/Desktop/TRS-Excercises-2/TRSEvaluation/TRSEvaluation/bin/Debug/net8.0/TRSEvaluation.deps.json
+/Users/saurabhjain/Desktop/TRS-Excercises-2/TRSEvaluation/TRSEvaluation/bin/Debug/net8.0/TRSEvaluation.runtimeconfig.json
+/Users/saurabhjain/Desktop/TRS-Excercises-2/TRSEvaluation/TRSEvaluation/bin/Debug/net8.0/TRSEvaluation.dll
+/Users/saurabhjain/Desktop/TRS-Excercises-2/TRSEvaluation/TRSEvaluation/bin/Debug/net8.0/TRSEvaluation.pdb
+/Users/saurabhjain/Desktop/TRS-Excercises-2/TRSEvaluation/TRSEvaluation/obj/Debug/net8.0/TRSEvaluation.csproj.SuggestedBindingRedirects.cache
+/Users/saurabhjain/Desktop/TRS-Excercises-2/TRSEvaluation/TRSEvaluation/obj/Debug/net8.0/TRSEvaluation.dll.config
+/Users/saurabhjain/Desktop/TRS-Excercises-2/TRSEvaluation/TRSEvaluation/obj/Debug/net8.0/TRSEvaluation.GeneratedMSBuildEditorConfig.editorconfig
+/Users/saurabhjain/Desktop/TRS-Excercises-2/TRSEvaluation/TRSEvaluation/obj/Debug/net8.0/TRSEvaluation.csproj.CoreCompileInputs.cache
+/Users/saurabhjain/Desktop/TRS-Excercises-2/TRSEvaluation/TRSEvaluation/obj/Debug/net8.0/TRSEvaluation.sourcelink.json
+/Users/saurabhjain/Desktop/TRS-Excercises-2/TRSEvaluation/TRSEvaluation/obj/Debug/net8.0/TRSEvaluation.dll
+/Users/saurabhjain/Desktop/TRS-Excercises-2/TRSEvaluation/TRSEvaluation/obj/Debug/net8.0/refint/TRSEvaluation.dll
+/Users/saurabhjain/Desktop/TRS-Excercises-2/TRSEvaluation/TRSEvaluation/obj/Debug/net8.0/TRSEvaluation.pdb
+/Users/saurabhjain/Desktop/TRS-Excercises-2/TRSEvaluation/TRSEvaluation/obj/Debug/net8.0/TRSEvaluation.genruntimeconfig.cache
+/Users/saurabhjain/Desktop/TRS-Excercises-2/TRSEvaluation/TRSEvaluation/obj/Debug/net8.0/ref/TRSEvaluation.dll
